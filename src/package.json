@@ -1,7 +1,7 @@
 {
-  "name": "photo-screen-saver",
-  "version": "0.0.1",
-  "description": "Windows screen saver that displays a photo slideshow, based on the Electron framework",
+  "name": "electron-photo-screen-saver",
+  "version": "0.0.0",
+  "description": "A fork of Rand Scallard's photo-screen-saver",
   "license": "MIT",
   "author": {
     "name": "Kinan Faham",

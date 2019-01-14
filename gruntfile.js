@@ -16,8 +16,8 @@ module.exports = function (grunt) {
 			toScr: {
 				files: [{ 
 					expand: true, 
-					src: 'package/photo-screen-saver-win32-x64/photo-screen-saver.exe', 
-					rename: function () { return 'package/photo-screen-saver-win32-x64/photo-screen-saver.scr' }
+					src: 'package/electron-photo-screen-saver-win32-x64/electron-photo-screen-saver.exe', 
+					rename: function () { return 'package/electron-photo-screen-saver-win32-x64/electron-photo-screen-saver.scr' }
 				}]
 			}
 		},
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 		electron: {
 			default: {
 				options: {
-					name: 'photo-screen-saver',
+					name: 'electron-photo-screen-saver',
 					dir: 'bin',
 					out: 'package',
 					platform: 'win32',
