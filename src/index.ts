@@ -1,16 +1,8 @@
 ﻿import * as $ from "jquery";
-import * as https from "https";
-import * as vm from "vm";
-import * as concat from "concat-stream";
-import * as fs from "fs";
 import { getRandom, isNullOrEmpty, shuffle } from "./utils";
 import { Photo } from "./photo";
 
-// Uncomment ONE of the following photo sources:
-import { getPhotos } from "./flickr";
-// import { getPhotos } from "./500px";
-// import { getPhotos } from "./local-images";
-
+import { getPhotos } from "./photoGetter";
 
 const PHOTO_INTERVAL = 60 * 1000;
 
@@ -29,12 +21,9 @@ async function run()
 	try
 	{
 		let photos = await getPhotos();
-
-		if(photos.length === 0)
-			throw new Error("No photos found that meet criteria.");
-
-		console.log(`${photos.length} photos found that meet criteria`);
-
+		if(photos.length === 0) {
+			throw new Error("Couldn't find any photos");
+		}
 		shuffle(photos);
 		loadNextImage(photos);
 		window.setInterval(() => loadNextImage(photos), PHOTO_INTERVAL);
@@ -88,12 +77,12 @@ function loadNextImage(
 		.appendTo($(document.body));
 
 	let caption = "";
-	if(!isNullOrEmpty(photo.title) || !isNullOrEmpty(photo.attribution))
+	if(!isNullOrEmpty(photo.title) || !isNullOrEmpty(photo.owner))
 	{
 		if(isNullOrEmpty(photo.title))
 			photo.title = "(Untitled)";
 
-		 caption = `${photo.title} ${photo.attribution}`;
+		 caption = `${photo.title} ${photo.owner}`;
 	}
 
 	let label = $("<label/>")

@@ -1,18 +1,18 @@
 {
-  "name": "photo-screen-saver",
-  "version": "0.1.0",
-  "description": "Windows screen saver that displays a photo slideshow, based on the Electron framework",
+  "name": "electron-photo-screen-saver",
+  "version": "0.0.0",
+  "description": "A fork of Rand Scullard's Electron screensaver",
   "license": "MIT",
   "author": {
-    "name": "Rand Scullard",
-    "email": "rand@randscullard.com"
+    "name": "Kinan Faham",
+    "email": "k@theSilentCamera.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RandScullard/photo-screen-saver.git"
+    "url": "https://github.com/kinano/electron-photo-screen-saver.git"
   },
   "bugs": {
-    "url": "http://github.com/RandScullard/photo-screen-saver/issues"
+    "url": "https://github.com/kinano/electron-photo-screen-saver/issues"
   },
   "scripts": {
     "build": "grunt",

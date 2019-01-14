@@ -4,12 +4,12 @@
   "description": "Windows screen saver that displays a photo slideshow, based on the Electron framework",
   "license": "MIT",
   "author": {
-    "name": "Rand Scullard",
-    "email": "rand@randscullard.com"
+    "name": "Kinan Faham",
+    "email": "k@theSilentCamera.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RandScullard/photo-screen-saver.git"
+    "url": "https://github.com/kinano/electron-photo-screen-saver.git"
   },
   "main": "main.js",
   "dependencies": {
