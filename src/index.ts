@@ -4,7 +4,7 @@ import { Photo } from "./photo";
 
 import { getPhotos } from "./photoGetter";
 
-import { interval } from "./config";
+import  {interval} from "./config";
 
 var currImageIdx = 0;
 

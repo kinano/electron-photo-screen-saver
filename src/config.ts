@@ -1,6 +1,17 @@
-export const sourceUrls:string[] = [
-    "https://thesilentcamera.com/api/screen_saver/v1/"
-];
+let fs = require('fs');
+interface ScreenSaverConfig
+{
+    sourceUrls: string[];
+    interval: number;
+}
 
-// The interval is measured in milliseconds
-export const interval = 60 * 1000;
+let data = fs.readFileSync(process.env.ELECTRON_SCREENSAVER_CONFIG_FILE);
+
+let config = JSON.parse(data) as ScreenSaverConfig;
+
+let {sourceUrls, interval} = config;
+
+export {
+    sourceUrls,
+    interval
+};
