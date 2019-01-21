@@ -5,7 +5,7 @@ Since Google killed their Picasa screen saver, I wanted a screensaver that can c
 
 # Compiling
 
-1. Clone the repo and modify the [config file to suit your needs](../blob/master/screenSaverConfig.json)
+1. Clone the repo and modify the [config file to suit your needs](../master/screenSaverConfig.json)
 2. Create a new environment variable that will hold the path to your screensaver's configuration file on your HDD
 ```
 [System.Environment]::SetEnvironmentVariable("ELECTRON_SCREENSAVER_CONFIG_FILE", "ABSOLUTE_PATH_TO screenSaverConfig.json", "User")
@@ -58,4 +58,4 @@ The changes will take effect next time you run the screensaver
 }
 ```
 
-* See the interface defined by [photo.ts](../blob/master/src/photo.ts) for the fields expected for each photograph.
+* See the interface defined by [photo.ts](../master/src/photo.ts) for the fields expected for each photograph.
