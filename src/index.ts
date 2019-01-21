@@ -1,10 +1,10 @@
 ﻿import * as $ from "jquery";
-import { getRandom, isNullOrEmpty, shuffle } from "./utils";
+import { getRandom, shuffle } from "./utils";
 import { Photo } from "./photo";
 
 import { getPhotos } from "./photoGetter";
 
-const PHOTO_INTERVAL = 60 * 1000;
+import { interval } from "./config";
 
 var currImageIdx = 0;
 
@@ -26,7 +26,7 @@ async function run()
 		}
 		shuffle(photos);
 		loadNextImage(photos);
-		window.setInterval(() => loadNextImage(photos), PHOTO_INTERVAL);
+		window.setInterval(() => loadNextImage(photos), interval);
 	}
 	catch(err)
 	{
@@ -76,19 +76,12 @@ function loadNextImage(
 		.css("transform-origin", `${xOrigin}% ${yOrigin}%`)
 		.appendTo($(document.body));
 
-	let caption = "";
-	if(!isNullOrEmpty(photo.title) || !isNullOrEmpty(photo.owner))
-	{
-		if(isNullOrEmpty(photo.title))
-			photo.title = "(Untitled)";
-
-		 caption = `${photo.title} ${photo.owner}`;
-	}
-
-	let label = $("<label/>")
-		.addClass(`pos${currImageIdx % 3}`)
-		.text(caption)
-		.appendTo($(document.body));
+	let label =  $().add(
+		$("<label/>")
+			.addClass(`pos${currImageIdx % 3}`)
+			.html(`${photo.title} <br> ${photo.credit} <br> ${photo.date}`)
+			.appendTo($(document.body))
+	)
 
 	$("<img/>")
 		.appendTo(photoDiv)
@@ -103,6 +96,7 @@ function loadNextImage(
 		})
 		.attr("src", photo.url);
 }
+
 
 // Since we are running in Electron, the "exports" global is undefined.
 // Adding this line of code prevents TypeScript from generating the following statement that depends on "exports":

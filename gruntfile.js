@@ -10,7 +10,16 @@ module.exports = function (grunt) {
 		copy: {
 			toBin: {
 				files: [
-					{ expand: true, cwd: 'src', src: ['index.html', 'index.css', 'package.json'], dest: 'bin/' }
+					{
+						expand: true,
+						cwd: 'src',
+						src: [
+							'index.html',
+							'index.css',
+							'package.json'
+						],
+						dest: 'bin/'
+					}
 				]
 			},
 			toScr: {

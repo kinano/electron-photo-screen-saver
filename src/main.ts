@@ -3,8 +3,6 @@ import * as electron from "electron";
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
-var mainWindow: Electron.BrowserWindow = null;
-
 // Quit when all windows are closed.
 app.on("window-all-closed", () =>
 {
@@ -32,22 +30,22 @@ app.on("ready", () =>
 			return;
 		}
 
-		//electron.dialog.showMessageBox({ message: process.argv.join("\n"), buttons: [ "OK" ] });
 	}
 
-	mainWindow = new BrowserWindow({ show: false, autoHideMenuBar: true });
-	mainWindow.loadURL("file://" + __dirname + "/index.html");
-	mainWindow.on("closed", () => { mainWindow = null });
-	//mainWindow.webContents.openDevTools();
+	electron.screen.getAllDisplays().forEach( (display) => {
+		let mainWindow = new BrowserWindow({
+			x: display.bounds.x,
+			y: display.bounds.y,
+			show: false,
+			autoHideMenuBar: true
+		});
+		mainWindow.loadURL("file://" + __dirname + "/index.html");
+		mainWindow.on("closed", () => { mainWindow = null });
+		setTimeout( () => {
+			mainWindow.setKiosk(true);
+			mainWindow.setAlwaysOnTop(true);
+			mainWindow.show();
+		}, 2000);
+	});
 
-	// Normally we could set show, kiosk, and alwaysOnTop to true in the BrowserWindow options.
-	// We have to do this after a brief delay so that the CSS cursor:none will take effect
-	// without the user having to move the mouse, and to avoid a flash of white screen while
-	// the page initially paints.
-	setTimeout(() => 
-	{
-		mainWindow.setKiosk(true);
-		mainWindow.setAlwaysOnTop(true);
-		mainWindow.show();
-	}, 2000);
 });
