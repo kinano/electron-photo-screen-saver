@@ -20,3 +20,5 @@ npm install; npm run build; npm start
 2- Add previews
 
 3- Add documentation
+
+4- Support multiple displays
