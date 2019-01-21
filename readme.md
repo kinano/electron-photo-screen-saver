@@ -29,6 +29,7 @@ Right now, there is no UI to modify the basic settings for this screensaver. You
 # See where the config file is stored & modify it
 [System.Environment]::GetEnvironmentVariable("ELECTRON_SCREENSAVER_CONFIG_FILE")
 ```
+Here is an explanation of each key in the config file
 ```
 {
     // An array of the urls that will be used to get photos
