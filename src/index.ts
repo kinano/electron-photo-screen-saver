@@ -69,11 +69,7 @@ function loadNextImage(
 	if(currImageIdx >= photos.length)
 		currImageIdx = 0;
 
-	let xOrigin = getRandom(0, 100);
-	let yOrigin = getRandom(0, 100);
-
 	let photoDiv = $("<div class='photo'/>")
-		.css("transform-origin", `${xOrigin}% ${yOrigin}%`)
 		.appendTo($(document.body));
 
 	let label =  $().add(

@@ -21,7 +21,7 @@ body
 	height: 100%;
 	cursor: none;
 	opacity: 0;
-	transition: opacity 5s linear, transform 65s linear;
+	transition: opacity 5s linear, transform 60s linear;
 }
 
 .photo.visible
