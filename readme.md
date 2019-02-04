@@ -44,4 +44,4 @@ The changes will take effect next time you run the screensaver
 
 # What data should the API return?
 
-* See the documentation on https://app.swaggerhub.com/apis-docs/theSilentCamera/photos/1.0.0
+* See the documentation on https://app.swaggerhub.com/apis/kinano/theSilentCamera/1.0.0
