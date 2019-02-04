@@ -34,7 +34,7 @@ Here is an explanation of each key in the config file
 {
     // An array of the urls that will be used to get photos
     "sourceUrls": [
-        "https://thesilentcamera.com/api/screen_saver/v1/"
+        "https://thesilentcamera.com/api/v1/screen_saver/"
     ],
     // The interval (in milliseconds) for fetching a new image
     "interval": 60000
