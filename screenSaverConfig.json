@@ -1,7 +1,7 @@
 {
     "sourceUrls": [
-        "https://thesilentcamera.com/api/v1/screen_saver/?nudes=true",
-        "https://thesilentcamera.com/api/v1/screen_saver/"
+        "https://thesilentcamera.com/api/v1/photos/?nudes=true",
+        "https://thesilentcamera.com/api/v1/photos/"
     ],
     "interval": 60000
 }

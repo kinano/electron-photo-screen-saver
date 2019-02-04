@@ -34,7 +34,7 @@ Here is an explanation of each key in the config file
 {
     // An array of the urls that will be used to get photos
     "sourceUrls": [
-        "https://thesilentcamera.com/api/v1/screen_saver/"
+        "https://thesilentcamera.com/api/v1/photos/"
     ],
     // The interval (in milliseconds) for fetching a new image
     "interval": 60000
@@ -44,19 +44,4 @@ The changes will take effect next time you run the screensaver
 
 # What data should the API return?
 
-* The API should return a json payload with a list of photos
-```
-{
-    "status":"ok",
-    "photos": [
-        {
-            "url": "",
-            "credit": "",
-            "date": "",
-            "title": ""
-        }
-    ]
-}
-```
-
-* See the interface defined by [photo.ts](../master/src/photo.ts) for the fields expected for each photograph.
+* See the documentation on https://app.swaggerhub.com/apis-docs/theSilentCamera/photos/1.0.0
